@@ -49,7 +49,7 @@ YTest = int32(carClasses(testIndizes))';
  end
 
  function f = subFeatureSelection(v,w)
-    tran = w'*v';
-    f = tran(1:90);
+    tran = w*v';
+    f = tran(:);
     %f = v;
  end
