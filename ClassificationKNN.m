@@ -36,7 +36,7 @@ Y = int32(carClasses(trainIndizes))';
 XTest = double(subImageFeatures(testIndizes,:));
 YTest = int32(carClasses(testIndizes))';
 
- Mdl = fitcecoc(X,Y,'Learners','knn');
+ Mdl = fitcecoc(X,Y,'Learners','tree');
  
  errorTrain = sum(abs(predict(Mdl,X) - Y) > 0) / double(trainCount)
  errorTest = sum(abs(predict(Mdl,XTest) - YTest) > 0) / length(YTest)
