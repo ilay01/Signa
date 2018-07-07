@@ -36,6 +36,8 @@ for i=1:min(fileCount,length(carClasses))
     imageFeatures(i,:) = f;
 end
 
+[imageFeatures, mapping] = lda(imageFeatures, carClasses,1500)
+
 carsClass1 = imageFeatures(carsClass1Indizes ,:)';
 carsClass2 = imageFeatures(carsClass2Indizes ,:)';
 carsClass3 = imageFeatures(carsClass3Indizes ,:)';
